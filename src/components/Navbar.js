@@ -83,8 +83,8 @@ const Navbar = () => {
           <Logo>RMJ STORE</Logo>
         </Center>
         <Right>
-          <MenuItem>REGISTER</MenuItem>
           <MenuItem>SIGN IN</MenuItem>
+          <MenuItem>LOG IN</MenuItem>
           <MenuItem>
             <Badge badgeContent={4} color="primary">
               <ShoppingCartOutlined />
