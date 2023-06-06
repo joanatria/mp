@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
   width: 100vw;
@@ -11,8 +12,9 @@ const Container = styled.div`
       center;
   background-size: cover;
   display: flex;
+  flex-direction: column; 
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start; 
 `;
 
 const Wrapper = styled.div`
@@ -54,9 +56,28 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
+const Center = styled.div`
+  text-align: center;
+  margin-bottom: 140px;
+`;
+
+const Logo = styled.h1`
+  font-weight: bold;
+  cursor: pointer;
+`;
+
 const Signin = () => {
+  const navigate = useNavigate();
+
+  const handleHomeClick = () => {
+    navigate('/');
+  };
+
   return (
     <Container>
+      <Center>
+        <Logo onClick={handleHomeClick}>RMJ STORE</Logo>
+      </Center>
       <Wrapper>
         <Title>CREATE AN ACCOUNT</Title>
         <Form>
