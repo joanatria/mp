@@ -30,7 +30,7 @@ const Language = styled.span`
 `
 
 const SearchContainer = styled.div`
-  border: 0.5px solid lightgray;
+  border: 0.25px solid lightgray;
   display: flex;
   align-items: center;
   margin-left: 25px;
@@ -39,6 +39,9 @@ const SearchContainer = styled.div`
 
 const Input = styled.input`
   border: none;
+  width: 300px;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 12px;
 `
 
 const Center = styled.div`
