@@ -1,4 +1,6 @@
-import styled from "styled-components";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const Container = styled.div`
@@ -56,11 +58,6 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-const Center = styled.div`
-  text-align: center;
-  margin-bottom: 140px;
-`;
-
 const Logo = styled.h1`
   font-weight: bold;
   cursor: pointer;
@@ -68,6 +65,39 @@ const Logo = styled.h1`
 
 const Signin = () => {
   const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    username: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+  });
+
+  const handleInputChange = (event) => {
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      // Make the HTTP POST request to your Spring Boot API
+      const response = await axios.post('http://localhost:8080/api/signin', formData);
+
+      console.log(response.data); // You can customize this based on your needs
+      alert('User registered successfully'); // Display a success message to the user
+
+      // Navigate back to the home page
+      navigate('/');
+    } catch (error) {
+      console.error(error);
+      alert('An error occurred. Please try again.'); // Display an error message to the user
+    }
+  };
 
   const handleHomeClick = () => {
     navigate('/');
@@ -75,23 +105,59 @@ const Signin = () => {
 
   return (
     <Container>
-      <Center>
+      <div>
         <Logo onClick={handleHomeClick}>RMJ STORE</Logo>
-      </Center>
+      </div>
       <Wrapper>
         <Title>CREATE AN ACCOUNT</Title>
-        <Form>
-          <Input placeholder="name" />
-          <Input placeholder="last name" />
-          <Input placeholder="username" />
-          <Input placeholder="email" />
-          <Input placeholder="password" />
-          <Input placeholder="confirm password" />
+        <Form onSubmit={handleSubmit}>
+          <Input
+            type="text"
+            name="firstName"
+            placeholder="first name"
+            value={formData.firstName}
+            onChange={handleInputChange}
+          />
+          <Input
+            type="text"
+            name="lastName"
+            placeholder="last name"
+            value={formData.lastName}
+            onChange={handleInputChange}
+          />
+          <Input
+            type="text"
+            name="username"
+            placeholder="username"
+            value={formData.username}
+            onChange={handleInputChange}
+          />
+          <Input
+            type="email"
+            name="email"
+            placeholder="email"
+            value={formData.email}
+            onChange={handleInputChange}
+          />
+          <Input
+            type="password"
+            name="password"
+            placeholder="password"
+            value={formData.password}
+            onChange={handleInputChange}
+          />
+          <Input
+            type="password"
+            name="confirmPassword"
+            placeholder="confirm password"
+            value={formData.confirmPassword}
+            onChange={handleInputChange}
+          />
           <Agreement>
             By creating an account, I consent to the processing of my personal
             data in accordance with the <b>PRIVACY POLICY</b>
           </Agreement>
-          <Button>CREATE</Button>
+          <Button type="submit">CREATE</Button>
         </Form>
       </Wrapper>
     </Container>

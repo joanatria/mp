@@ -107,7 +107,7 @@ const Navbar = () => {
           <MenuItem onClick={handleSignInClick}>SIGN IN</MenuItem>
           <MenuItem onClick={handleLoginClick}>LOG IN</MenuItem>
           <MenuItem onClick={handleCartClick}>
-            <Badge badgeContent={4} color="primary">
+            <Badge badgeContent={0} color="primary">
               <ShoppingCartOutlined />
             </Badge>
           </MenuItem>
