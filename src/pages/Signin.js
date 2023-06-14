@@ -2,19 +2,10 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 
 const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(
-      rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.5)
-    ),
-    url("https://images.pexels.com/photos/6984661/pexels-photo-6984661.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940")
-      center;
-  background-size: cover;
-  display: flex;
-  flex-direction: column; 
+  background-color: white;
   align-items: center;
   justify-content: flex-start; 
 `;
@@ -23,7 +14,23 @@ const Wrapper = styled.div`
   width: 40%;
   padding: 20px;
   background-color: white;
+  margin: 0 auto;
+  text-align: center;
 `;
+
+const Button = styled.button`
+  width: 40%;
+  margin-top: 20px;
+  border: none;
+  padding: 15px 20px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
 
 const Title = styled.h1`
   font-size: 24px;
@@ -49,19 +56,6 @@ const Agreement = styled.span`
   margin: 20px 0px;
 `;
 
-const Button = styled.button`
-  width: 40%;
-  border: none;
-  padding: 15px 20px;
-  background-color: teal;
-  color: white;
-  cursor: pointer;
-`;
-
-const Logo = styled.h1`
-  font-weight: bold;
-  cursor: pointer;
-`;
 
 const Signin = () => {
   const navigate = useNavigate();
@@ -99,14 +93,10 @@ const Signin = () => {
     }
   };
 
-  const handleHomeClick = () => {
-    navigate('/');
-  };
-
   return (
     <Container>
       <div>
-        <Logo onClick={handleHomeClick}>RMJ STORE</Logo>
+        <Navbar />
       </div>
       <Wrapper>
         <Title>CREATE AN ACCOUNT</Title>

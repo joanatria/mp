@@ -44,31 +44,44 @@ const Slide = styled.div`
     height: 100vh;
     display: flex;
     align-items: center;
-    background-color: #${props=>props.bg};
-`
-const ImgContainer = styled.div`
-    height: 80%;
-    flex: 1;
-`
+    background-color: #${props => props.bg};
+    position: relative; 
+`;
+
 const InfoContainer = styled.div`
-    flex: 1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 60px;
-`
+`;
+
+const ImgContainer = styled.div`
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    flex: 1;
+    position: relative;
+`;
 
 const Image = styled.img`
     height: 100%; 
     margin-left: 100px;
 `
 
-const Title = styled.h1`
-    font-size: 70px;
-`
-const Description = styled.p`
-    margin: 60px 0px;
-    font-size: 20px;
-    font-weight: 500;
-    letter-spacing: 3px;
-`
+// const Title = styled.h1`
+//     font-size: 70px;
+// `
+// const Description = styled.p`
+//     margin: 60px 0px;
+//     font-size: 20px;
+//     font-weight: 500;
+//     letter-spacing: 3px;
+// `
 const Button = styled.button`
     padding: 10px;
     font-size: 20px;
@@ -91,15 +104,13 @@ const Slider = () => {
         <ArrowLeftOutlined/>
       </Arrow>
       <Wrapper slideIndex={slideIndex}>
-        {sliderItems.map((item) => (
+        {sliderItems.map((item, index)  => (
             <Slide bg={item.bg} key={item.id}> 
             <ImgContainer>
                 <Image src={item.img}/>
             </ImgContainer>
             <InfoContainer>
-                <Title>{item.title}</Title>
-                <Description>{item.description}</Description>
-                <Button>SHOP NOW</Button>
+                {index === 0 && <Button>SHOP NOW</Button>}
             </InfoContainer>
             </Slide>
         ))}

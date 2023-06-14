@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
   height: 60vh;
-  background-color: #fcf5f5;
+  background-color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,14 +33,14 @@ const Input = styled.input`
   border: none;
   flex: 8;
   padding-left: 20px;
-  font-family: 'Urbanist', sans-serif;
-  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 14px;
 `;
 
 const Button = styled.button`
   flex: 1;
   border: none;
-  background-color: teal;
+  background-color: black;
   color: white;
 `;
 

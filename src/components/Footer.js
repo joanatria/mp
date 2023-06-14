@@ -23,7 +23,7 @@ import {
   const Logo = styled.h1``;
   
   const Desc = styled.p`
-    margin: 20px 0px;
+    margin: 5px 0px;
   `;
   
   const SocialContainer = styled.div`
@@ -83,11 +83,11 @@ import {
     return (
       <Container>
         <Left>
-          <Logo>RMJ STORE</Logo>
+          <Logo>Apple Store</Logo>
           <Desc>
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form, by injected
-            humour, or randomised words which don’t look even slightly believable.
+          Price includes taxes and duties with free delivery for all orders. 
+          Limited-time offer for new subscribers who connect an eligible device to an Apple device running iOS 15 or iPadOS 15 or later. 
+          Service availability varies by region. Restrictions and terms apply. 
           </Desc>
           <SocialContainer>
             <SocialIcon color="3B5999">
@@ -109,14 +109,14 @@ import {
           <List>
             <ListItem>Home</ListItem>
             <ListItem>Cart</ListItem>
-            <ListItem>Man Fashion</ListItem>
-            <ListItem>Woman Fashion</ListItem>
+            <ListItem>Mac</ListItem>
+            <ListItem>iPhone</ListItem>
+            <ListItem>iPad</ListItem>
+            <ListItem>AirPods</ListItem>
+            <ListItem>Watch</ListItem>
             <ListItem>Accessories</ListItem>
-            <ListItem>My Account</ListItem>
-            <ListItem>Order Tracking</ListItem>
-            <ListItem>Wishlist</ListItem>
-            <ListItem>Wishlist</ListItem>
-            <ListItem>Terms</ListItem>
+            <ListItem>Discounts</ListItem>
+            <ListItem>Support</ListItem>
           </List>
         </Center>
         <Right>
@@ -128,7 +128,7 @@ import {
             <Phone style={{marginRight:"10px"}}/> +1 234 56 78
           </ContactItem>
           <ContactItem>
-            <MailOutline style={{marginRight:"10px"}} /> contact@lama.dev
+            <MailOutline style={{marginRight:"10px"}} /> contact@applestore
           </ContactItem>
           <Payment src="https://i.ibb.co/Qfvn4z6/payment.png" />
         </Right>
