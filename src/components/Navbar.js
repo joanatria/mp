@@ -120,6 +120,31 @@ const Navbar = () => {
     navigate('/store');
   };
 
+  const handleMacClick = () => {
+    navigate('/mac');
+  };
+ 
+ 
+  const handleIpadClick = () => {
+    navigate('/ipad');
+  };
+ 
+  const handleIphoneClick = () => {
+    navigate('/iphone');
+  };
+ 
+  const handleWatchClick = () => {
+    navigate('/watch');
+  };
+ 
+  const handleAirpodsClick = () => {
+    navigate('/airpods');
+  };
+ 
+  const handleAccClick = () => {
+    navigate('/acc');
+  }; 
+
   const handleHomeClick = () => {
     navigate('/');
   };
@@ -130,28 +155,28 @@ const Navbar = () => {
         <Left>
           <AppleIcon onClick={handleHomeClick} />
           <AppleNavLinks>
-          <AppleNavLink>
-              <p onClick={handleStoreClick}>Store</p>
-            </AppleNavLink>
-            <AppleNavLink>
-              <p >Mac</p>
-            </AppleNavLink>
-            <AppleNavLink>
-              <p >iPad</p>
-            </AppleNavLink>
-            <AppleNavLink>
-              <p >iPhone</p>
-            </AppleNavLink>
-            <AppleNavLink>
-              <p >Watch</p>
-            </AppleNavLink>
-            <AppleNavLink>
-              <p >AirPods</p>
-            </AppleNavLink>
-            <AppleNavLink>
-              <p >Accessories</p>
-            </AppleNavLink>
-          </AppleNavLinks>
+           <AppleNavLink>
+             <p onClick={handleStoreClick}>Store</p>
+           </AppleNavLink>
+           <AppleNavLink>
+             <p onClick={handleMacClick}>Mac</p>
+           </AppleNavLink>
+           <AppleNavLink>
+             <p onClick={handleIpadClick}>iPad</p>
+           </AppleNavLink>
+           <AppleNavLink>
+             <p onClick={handleIphoneClick}>iPhone</p>
+           </AppleNavLink>
+           <AppleNavLink>
+             <p onClick={handleWatchClick}>Watch</p>
+           </AppleNavLink>
+           <AppleNavLink>
+             <p onClick={handleAirpodsClick}>AirPods</p>
+           </AppleNavLink>
+           <AppleNavLink>
+             <p onClick={handleAccClick}>Accessories</p>
+           </AppleNavLink>
+         </AppleNavLinks>
         </Left>
         <Right>
           <form onSubmit={handleSearchSubmit}>
